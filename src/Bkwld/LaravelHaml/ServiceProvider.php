@@ -76,10 +76,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 		$this->registerHamlCompiler();
 		$this->registerHamlBladeCompiler();
 
-		$customDirectives = $this->app['blade.compiler']->getCustomDirectives();
-		foreach ($customDirectives as $name => $closure) {
-			$this->app['Bkwld\LaravelHaml\HamlBladeCompiler']->directive($name, $closure);
-		}		
 	}
 
 	/**
